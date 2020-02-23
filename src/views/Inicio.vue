@@ -32,6 +32,8 @@
 </div>
 <br>
 
+<Footer/>
+
 
 
   </div>
@@ -39,12 +41,14 @@
 
 <script>
 import Nav from '@/components/Nav.vue'
+import Footer from '@/components/Footer.vue'
 import axios from "axios";
 
   export default {
   name: 'Inicio',
   components: {
-    Nav
+    Nav,
+    Footer
   },
     data () {
       return {
