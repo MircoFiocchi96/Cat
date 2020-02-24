@@ -69,5 +69,6 @@ import axios from 'axios'
   margin-top:50px;
   margin-left: 300px;
   margin-right: 300px;
+  margin-bottom: 150px;
  }
 </style>
