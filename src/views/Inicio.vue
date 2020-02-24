@@ -7,7 +7,19 @@
     <h1>Welcome to Gatolandia</h1>
     </div>
 
-<div class="tabla">  
+<div  v-if="!showCat">
+    <v-img
+          src='../assets/gato.jpg'
+          class="my- 3"
+          contain
+          height="200"
+        />
+
+       
+</div>
+
+
+<div  v-if="showCat" class="tabla">  
   <v-simple-table dark >
     <template v-slot:default>
       <thead>
@@ -28,11 +40,11 @@
 
 <br>
 <div>
-   <v-btn rounded color="primary" @click="refresh()" dark>+ information</v-btn>
+   <v-btn  rounded color="primary" @click="refresh()" dark>Show information</v-btn>
 </div>
 <br>
 
-<Footer/>
+<Footer   v-if="showCat"/>
 
 
 
@@ -42,7 +54,7 @@
 <script>
 import Nav from '@/components/Nav.vue'
 import Footer from '@/components/Footer.vue'
-import axios from "axios";
+
 
   export default {
   name: 'Inicio',
@@ -53,23 +65,22 @@ import axios from "axios";
     data () {
       return {
         gatos: null,
+        showCat: false
 
       }
     },
     mounted() {
-      this.getCat()
+
     },
   methods:{
     refresh() {
-      this.getCat()
-
+        this.$store.dispatch('getCat').then(result => {
+           this.gatos = this.$store.getters.getCats
+           this.showCat = true
+    })
     },
 
-     async getCat() {
-      let datos = await axios.get(' https://cat-fact.herokuapp.com/facts/random?amount=15')
-      this.gatos = datos.data
-      console.log(this.gatos)
-    }
+
   },
   }
 </script>
