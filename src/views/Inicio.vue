@@ -25,17 +25,15 @@
 
 
 <div  v-if="showCat" class="tabla">  
-  <v-simple-table dark >
+  <v-simple-table dense >
     <template v-slot:default>
       <thead>
         <tr>
-          <th class="text-left">Information of</th>
-          <th class="text-left">Data</th>
+          <th class="text-left">Information of cat</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="item in gatos" :key="item">
-          <td>Cat </td>
           <td>{{ item.text }}</td>
         </tr>
       </tbody>
