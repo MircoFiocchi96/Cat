@@ -5,18 +5,17 @@
       <v-content>
         <v-container>
 
-            <v-layout align-center justify-center>
+            <div align-center justify-center>
                 <v-btn fab small color="black " dark large @click="loadNextImage" > <i class="fas fa-sync-alt"></i></v-btn> 
-            </v-layout><br>
+            </div><br>
 
-            <v-layout row wrap>
-                <v-flex xs12 >
+
+                <div class="foto" >
                 <v-card flat tile class="d-flex">
                     <v-img :src="image.url" contain>
                     </v-img>
                 </v-card>
-                </v-flex>
-            </v-layout>
+                </div>
 
         </v-container>
       </v-content>
@@ -64,3 +63,11 @@ import axios from 'axios'
         }
   }
 </script>
+
+<style>
+.foto { 
+  margin-top:50px;
+  margin-left: 300px;
+  margin-right: 300px;
+ }
+</style>

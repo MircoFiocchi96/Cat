@@ -49,7 +49,7 @@
 </div>
 <br>
 
-<Footer   v-if="showCat"/>
+  <Footer   v-if="showCat"/>
 
 
 
