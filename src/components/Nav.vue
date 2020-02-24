@@ -15,10 +15,8 @@
         <div @click="breed()" style="margin: 10px">
           | Photos  
         </div>
-        <div style="margin: 10px">
-          | Photos 
-        </div>
-         <div style="margin: 10px">
+
+         <div @click="videos()" style="margin: 10px">
           | Videos 
         </div>
 
@@ -40,6 +38,9 @@ export default {
     },
     breed(){
       this.$router.push('photos')
+    },
+    videos(){
+      this.$router.push('videos')
     },
   }
 }

@@ -22,7 +22,7 @@
       </v-card-title>
 
       <v-card-text class="py-2 white--text text-center">
-        {{ new Date().getFullYear() }} — <strong>Ing.Mirco Fiocchi</strong>
+        {{ new Date().getFullYear() }} — <strong>Mirco Fiocchi</strong>
       </v-card-text>
     </v-card>
   </v-footer>
