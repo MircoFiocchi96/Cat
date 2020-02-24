@@ -6,6 +6,13 @@
     <div style="margin-left: 50px;">
     <h1>Welcome to Gatolandia</h1>
     </div>
+    <br>
+
+    <div style="margin-left:20px; margin-right:20px;">
+      <Carousels/>
+    </div>
+    
+
 
 <div  v-if="!showCat">
     <v-img
@@ -13,9 +20,7 @@
           class="my- 3"
           contain
           height="200"
-        />
-
-       
+        />  
 </div>
 
 
@@ -54,12 +59,14 @@
 <script>
 import Nav from '@/components/Nav.vue'
 import Footer from '@/components/Footer.vue'
+import Carousels from '@/components/Carousels.vue'
 
 
   export default {
   name: 'Inicio',
   components: {
     Nav,
+    Carousels,
     Footer
   },
     data () {

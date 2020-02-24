@@ -12,12 +12,21 @@ const routes = [{
     {
         path: '/inicio',
         name: 'Inicio',
-        // route level code-splitting
-        // this generates a separate chunk (Inicio.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
         component: () =>
-            import ( /* webpackChunkName: "Inicio" */ '../views/Inicio.vue')
-    }
+            import ('../views/Inicio.vue')
+    },
+    {
+        path: '/photos',
+        name: 'Photos',
+        component: () =>
+            import ('../views/Photos.vue')
+    },
+    {
+        path: '/videos',
+        name: 'Videos',
+        component: () =>
+            import ('../views/Videos.vue')
+    },
 ]
 
 const router = new VueRouter({

@@ -3,16 +3,27 @@
     <v-toolbar
       dark
       prominent
-      src="https://estaticos.elperiodico.com/resources/jpg/1/6/gato-1502194230861.jpg"
+       height="50px"
     >
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
+    <v-toolbar-title style=""><i class="fas fa-cat"></i> Gatolandia</v-toolbar-title>
 
       <v-spacer></v-spacer>
+      <v-toolbar-items>
+        <div @click="home()" style="margin: 10px">
+          | Home  
+        </div>
+        <div @click="breed()" style="margin: 10px">
+          | Photos  
+        </div>
+        <div style="margin: 10px">
+          | Photos 
+        </div>
+         <div style="margin: 10px">
+          | Videos 
+        </div>
 
-      <v-btn icon>
-        <v-icon>mdi-export</v-icon>
-      </v-btn>
+
+        </v-toolbar-items>
     </v-toolbar>
   </div>
 </template>
@@ -20,7 +31,18 @@
 <script>
 export default {
   name: 'Nav',
+    data: () => ({
 
+  }),
+  methods:{
+    home(){
+      this.$router.push('inicio')
+    },
+    breed(){
+      this.$router.push('photos')
+    },
+  }
 }
+
 </script>
 
