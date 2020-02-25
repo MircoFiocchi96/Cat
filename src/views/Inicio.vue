@@ -41,6 +41,8 @@
   </v-simple-table>
 </div>
 
+<Progress v-if="loading"/>
+
 <br>
 <div>
    <v-btn  rounded color="primary" @click="refresh()" dark>Show information</v-btn>
@@ -58,6 +60,7 @@
 import Nav from '@/components/Nav.vue'
 import Footer from '@/components/Footer.vue'
 import Carousels from '@/components/Carousels.vue'
+import Progress from '@/components/Progress.vue'
 
 
   export default {
@@ -65,12 +68,14 @@ import Carousels from '@/components/Carousels.vue'
   components: {
     Nav,
     Carousels,
-    Footer
+    Footer,
+    Progress
   },
     data () {
       return {
         gatos: null,
-        showCat: false
+        showCat: false,
+        loading: false
 
       }
     },
@@ -79,9 +84,11 @@ import Carousels from '@/components/Carousels.vue'
     },
   methods:{
     refresh() {
+      this.loading=true
         this.$store.dispatch('getCat').then(result => {
            this.gatos = this.$store.getters.getCats
            this.showCat = true
+           this.loading = false
     })
     },
 
